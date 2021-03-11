@@ -80,7 +80,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
 
   private ReadableMap options;
   protected Uri cameraCaptureURI;
-  private Boolean noData = false;
+  private Boolean noData = true;
   private Boolean pickVideo = false;
   private Boolean pickBoth = false;
   private ImageConfig imageConfig = new ImageConfig(null, null, 0, 0, 100, 0, false);
@@ -765,10 +765,10 @@ public class ImagePickerModule extends ReactContextBaseJavaModule
   }
 
   private void parseOptions(final ReadableMap options) {
-    noData = false;
-    if (options.hasKey("noData")) {
-      noData = options.getBoolean("noData");
-    }
+//     noData = false;
+//     if (options.hasKey("noData")) {
+//       noData = options.getBoolean("noData");
+//     }
     imageConfig = imageConfig.updateFromOptions(options);
     pickVideo = false;
     pickBoth = false;
